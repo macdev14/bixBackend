@@ -43,7 +43,9 @@ class Employee(models.Model):
     name = models.CharField(_('Employee Name'), max_length=512)
     cpf = BRCPFField(_('Document Number'), unique=True) 
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
-
+    entered_at = models.DateField(auto_now_add=True)
+    exited_at = models.DateField(null=True, blank=True)
+    vacation_days = models.IntegerField(default=0)
     def __str__(self) -> str:
         return str(self.name)
 

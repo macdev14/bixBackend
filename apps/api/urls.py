@@ -18,7 +18,7 @@ router.register(r'employees', views.EmployeeViewSet , basename="employee")
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('login/', views.CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include(router.urls)),
     path('', include('rest_framework.urls', namespace='rest_framework'))

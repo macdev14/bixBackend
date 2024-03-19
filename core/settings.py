@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = 'authentication.User'
 
 SIMPLE_JWT = {
-'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=5),
+'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),
 'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=30),
 'ROTATE_REFRESH_TOKENS': False,
 'BLACKLIST_AFTER_ROTATION': True,
@@ -176,3 +176,5 @@ REST_FRAMEWORK = {
     )
     
 }
+
+
